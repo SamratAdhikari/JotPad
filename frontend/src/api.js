@@ -1,8 +1,12 @@
 import axios from 'axios'
 import { ACCESS_TOKEN } from './constants'
 
+
+const apiURL = '/choreo-apis/jotpad/backend/rest-api-be2/v1.0'
+
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL
+    baseURL: import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL : apiURL,
+    
 })
 
 api.interceptors.request.use(
